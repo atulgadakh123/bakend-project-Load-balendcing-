@@ -1,0 +1,27 @@
+# base image
+FROM node:18
+
+# set working directory
+
+WORKDIR /app
+
+# install app dependecies
+COPY package.json ./
+
+# installing dependencies
+
+RUN npm install
+
+# copy app files
+
+COPY . .
+
+#  expose port
+
+EXPOSE 3000
+
+
+#  start app
+
+CMD ["node", "Server.js"]
+
